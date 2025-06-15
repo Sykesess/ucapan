@@ -107,11 +107,8 @@ video {
   display: none;
   padding: 40px 20px;
   animation: fadeIn 2s ease;
-  background-image: url('https://raw.githubusercontent.com/Sykesess/ucapan/main/background ucapan1.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff; /* Biar teksnya tetap kebaca di atas background */
 }
+
 
 .footer {
   margin-top: 30px;
