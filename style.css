@@ -1,140 +1,126 @@
 /* Reset dasar */
 body {
-  margin: 0;
-  font-family: 'Charm', cursive;
-  background-color: #fffaf3;
-  color: #333;
-  text-align: center;
+  margin: 0;
+  font-family: 'Charm', cursive;
+  background-color: #fffaf3;
+  color: #333;
+  text-align: center;
 }
 
 /* VIDEO PEMBUKA */
 .video-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #nextBtn {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 12px 24px;
-  font-size: 18px;
-  background-color: #f7d9ae;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  display: none;
-  font-family: 'Charm', cursive;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #f7d9ae;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  font-family: 'Charm', cursive;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 #nextBtn.show {
-  display: block;
-  animation: fadeIn 2s;
+  display: block;
+  animation: fadeIn 2s;
 }
 
 /* SLIDESHOW */
 .slideshow {
-  position: relative;
-  padding: 30px;
+  position: relative;
+  padding: 30px;
 }
 
 .slide-item {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeIn 1s ease;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease;
 }
 
 .slide-item.active {
-  display: flex;
+  display: flex;
 }
 
 .slide {
-  width: 90%;
-  max-width: 500px;
-  border-radius: 20px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .slide-text {
-  font-size: 20px;
-  background-color: #fff8e7;
-  padding: 10px 20px;
-  border-radius: 12px;
-  max-width: 80%;
-  margin: 0 auto;
+  font-size: 20px;
+  background-color: #fff8e7;
+  padding: 10px 20px;
+  border-radius: 12px;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 #nextSlideBtn {
-  margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #f6c28b;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: 'Charm', cursive;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #f6c28b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Charm', cursive;
 }
 
 /* FINAL UCAPAN */
 #finalMessage {
-  display: none;
-  padding: 40px 20px;
-  animation: fadeIn 2s ease;
+  display: none;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease;
 }
 
 #finalMessage.show {
-  display: block;
+  display: block;
 }
 
 #finalMessage h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-#finalMessage {
-  display: none;
-  padding: 40px 20px;
-  animation: fadeIn 2s ease;
-}
-
-#finalMessage {
-  display: none;
-  padding: 40px 20px;
-  animation: fadeIn 2s ease;
-  max-height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
+#finalMessage p {
+  font-size: 20px;
+  margin: 12px 0;
 }
 
 .footer {
-  margin-top: 30px;
-  font-style: italic;
-  color: #5e4634;
+  margin-top: 30px;
+  font-style: italic;
+  color: #555;
 }
 
 .bottom-video {
+  margin-top: 30px;
   width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .bottom-video video {
@@ -144,9 +130,8 @@ video {
   display: block;
 }
 
-
 /* ANIMASI FADE */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
