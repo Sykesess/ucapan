@@ -72,17 +72,22 @@
       bgMusic.play();
     };
 
-    nextSlideBtn.onclick = function () {
-      slideItems[currentSlide].classList.remove("active");
-      currentSlide++;
-      if (currentSlide < slideItems.length) {
-        slideItems[currentSlide].classList.add("active");
-      } else {
-        slideshow.style.display = "none";
-        finalMessage.classList.add("show");
-      }
-    };
-  </script>
+   nextSlideBtn.onclick = function () {
+  slideItems[currentSlide].classList.remove("active");
+
+  // Tunggu transisi keluar dulu
+  setTimeout(() => {
+    slideItems[currentSlide].style.display = "none";
+    currentSlide++;
+
+    if (currentSlide < slideItems.length) {
+      slideItems[currentSlide].classList.add("active");
+    } else {
+      slideshow.style.display = "none";
+      finalMessage.classList.add("show");
+    }
+  }, 500); // jeda 0.5 detik untuk transisi
+};
 
 </body>
 </html>
