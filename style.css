@@ -52,13 +52,14 @@ video {
   display: none;
   flex-direction: column;
   align-items: center;
-  animation: fadeIn 1s ease;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .slide-item.active {
   display: flex;
+  opacity: 1;
 }
-
 .slide {
   width: 90%;
   max-width: 500px;
