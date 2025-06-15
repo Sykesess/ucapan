@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-<head> <link rel="stylesheet" href="style.css">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Selamat Sayang ✨</title>
@@ -9,6 +9,7 @@
 </head>
 <body>
 
+  <!-- VIDEO PEMBUKA -->
   <div class="video-container">
     <video id="openingVideo" autoplay muted>
       <source src="https://github.com/Sykesess/ucapan/raw/refs/heads/main/video.mp4" type="video/mp4" />
@@ -16,6 +17,7 @@
     <button id="nextBtn">Lanjutkan 💖</button>
   </div>
 
+  <!-- SLIDESHOW -->
   <div class="slideshow" style="display: none;">
     <div class="slide-item active">
       <img src="https://raw.githubusercontent.com/Sykesess/ucapan/main/slide1.jpg" class="slide" />
@@ -37,28 +39,27 @@
   </div>
 
   <!-- FINAL UCAPAN -->
-<div id="finalMessage">
-  <h1>Selamat Seminar Hasil, Sayang 🎓✨</h1>
-  <p>Kamu udah sampai sejauh ini, dan aku ikut senang banget.</p>
-  <p>Kaya Kiki yang belajar terbang, kamu juga terbang tinggi, meski kadang takut.</p>
-  <p>Aku akan selalu nemenin kamu—sampai akhir cerita. 💌</p>
-  <p class="footer">– Dari seseorang yang percaya sama kamu 🌷</p>
+  <div id="finalMessage">
+    <h1>Selamat Seminar Hasil, Sayang 🎓✨</h1>
+    <p>Kamu udah sampai sejauh ini, dan aku ikut senang banget.</p>
+    <p>Kaya Kiki yang belajar terbang, kamu juga terbang tinggi, meski kadang takut.</p>
+    <p>Aku akan selalu nemenin kamu—sampai akhir cerita. 💌</p>
+    <p class="footer">– Dari seseorang yang percaya sama kamu 🌷</p>
 
-  <!-- VIDEO DI BAWAH -->
-  <div class="bottom-video">
-    <video autoplay muted loop playsinline>
-      <source src="https://github.com/Sykesess/ucapan/raw/main/video terakhir.mp4" type="video/mp4" />
-    </video>
+    <!-- VIDEO DI BAWAH -->
+    <div class="bottom-video">
+      <video autoplay muted loop playsinline>
+        <source src="https://github.com/Sykesess/ucapan/raw/main/video%20terakhir.mp4" type="video/mp4" />
+      </video>
+    </div>
   </div>
-</div>
-
 
   <!-- MUSIK -->
   <audio id="bgMusic" loop>
     <source src="A Town with an Ocean View.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- JS SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     const video = document.getElementById("openingVideo");
     const nextBtn = document.getElementById("nextBtn");
@@ -70,17 +71,17 @@
 
     let currentSlide = 0;
 
-    video.onended = function () {
+    video.onended = () => {
       nextBtn.classList.add("show");
     };
 
-    nextBtn.onclick = function () {
+    nextBtn.onclick = () => {
       document.querySelector(".video-container").style.display = "none";
       slideshow.style.display = "block";
       bgMusic.play();
     };
 
-    nextSlideBtn.onclick = function () {
+    nextSlideBtn.onclick = () => {
       slideItems[currentSlide].classList.remove("active");
       currentSlide++;
       if (currentSlide < slideItems.length) {
