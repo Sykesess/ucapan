@@ -119,6 +119,22 @@ video {
   color: #555;
 }
 
+.bottom-video {
+  margin-top: 30px;
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-video video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
 /* ANIMASI FADE */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
