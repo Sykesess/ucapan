@@ -124,3 +124,26 @@ video {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-item {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+.slide-item.active {
+  display: flex;
+}
