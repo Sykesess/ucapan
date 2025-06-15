@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-<head> <link rel="stylesheet" href="style.css">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Selamat Seminar Hasil</title>
@@ -17,10 +17,18 @@
     <p>Semoga langkahmu makin ringan, hatimu selalu hangat, dan aku akan terus di sini menemani kamu, sampai akhir cerita 💌</p>
     <p class="footer">– Dari seseorang yang selalu dukung kamu 🌷</p>
   </div>
-  <audio id="bgMusic" loop>
-  <source src="https://raw.githubusercontent.com/Sykesess/ucapan/main/A%20Town%20with%20an%20Ocean%20View.mp3" type="audio/mpeg">
-</audio>
 
-<button onclick="document.getElementById('bgMusic').play()">Putar Musik 🎵</button>
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="https://raw.githubusercontent.com/Sykesess/ucapan/main/A%20Town%20with%20an%20Ocean%20View.mp3" type="audio/mpeg">
+  </audio>
+
+  <button onclick="document.getElementById('bgMusic').play()" class="play-button">Putar Musik 🎵</button>
+
+  <script>
+    document.addEventListener('click', function() {
+      document.getElementById('bgMusic').play();
+    }, { once: true });
+  </script>
 </body>
 </html>
