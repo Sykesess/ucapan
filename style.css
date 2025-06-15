@@ -109,6 +109,15 @@ video {
   animation: fadeIn 2s ease;
 }
 
+#finalMessage {
+  display: none;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease;
+  max-height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
 }
 
 .footer {
