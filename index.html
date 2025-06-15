@@ -2,96 +2,87 @@
 <html lang="id">
 <head> <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Selamat Seminar Hasil</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Sayang ✨</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Charm&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- VIDEO INTRO -->
-  <div id="introVideo">
-    <video src="https://github.com/Sykesess/ucapan/raw/refs/heads/main/video.mp4" autoplay muted></video>
+
+  <div class="video-container">
+    <video id="openingVideo" autoplay muted>
+      <source src="https://github.com/Sykesess/ucapan/raw/refs/heads/main/video.mp4" type="video/mp4" />
+    </video>
+    <button id="nextBtn">Lanjutkan 💖</button>
   </div>
 
-  <!-- BUTTON NEXT -->
-  <div id="startButton" style="display: none;">
-    <button onclick="startSlides()">Lanjut ke Cerita ➡️</button>
-  </div>
-
-  <!-- SLIDESHOW -->
   <div class="slideshow" style="display: none;">
     <div class="slide-item active">
       <img src="https://raw.githubusercontent.com/Sykesess/ucapan/main/slide1.jpg" class="slide" />
-      <p class="slide-text">Kamu luar biasa, langkah awalmu hebat ✨</p>
+      <p class="slide-text">Aku tau perjuanganmu sejauh ini nggak mudah.</p>
     </div>
     <div class="slide-item">
       <img src="https://raw.githubusercontent.com/Sykesess/ucapan/main/slide2.jpg" class="slide" />
-      <p class="slide-text">Seperti pagi yang hangat, kamu bawa harapan ☀️</p>
+      <p class="slide-text">Tapi kamu tetap kuat, tetap manis, dan tetap kamu.</p>
     </div>
     <div class="slide-item">
       <img src="https://raw.githubusercontent.com/Sykesess/ucapan/main/slide3.jpg" class="slide" />
-      <p class="slide-text">Aku percaya kamu bisa terbang lebih tinggi 🌈</p>
+      <p class="slide-text">Hari ini kamu bersinar, seperti mimpi yang pelan-pelan terwujud.</p>
     </div>
     <div class="slide-item">
       <img src="https://raw.githubusercontent.com/Sykesess/ucapan/main/slide4.jpg" class="slide" />
-      <p class="slide-text">Terima kasih sudah sejauh ini, kamu hebat 💌</p>
+      <p class="slide-text">Dan aku selalu bangga... selalu. 💐</p>
     </div>
+    <button id="nextSlideBtn">Slide Berikutnya ➡️</button>
   </div>
 
-  <!-- BUTTON NEXT SLIDE -->
-  <div id="nextBtn" style="display: none;">
-    <button onclick="nextSlide()">Lanjut ➡️</button>
+  <!-- BAGIAN 3: UCAPAN TERAKHIR -->
+  <div id="finalMessage">
+    <h1>Selamat Seminar Hasil, Sayang 🎓✨</h1>
+    <p>Kamu udah sampai sejauh ini, dan aku ikut senang banget.</p>
+    <p>Kaya Kiki yang belajar terbang, kamu juga terbang tinggi, meski kadang takut.</p>
+    <p>Aku akan selalu nemenin kamu—sampai akhir cerita. 💌</p>
+    <p class="footer">– Dari seseorang yang percaya sama kamu 🌷</p>
   </div>
 
-  <!-- UCAPAN AKHIR -->
-  <div id="finalMessage" style="display: none;" class="container">
-    <h1>Selamat Seminar Hasil 🎓✨</h1>
-    <p>Sayang, kamu udah sampai sejauh ini.</p>
-    <p>Dari setiap lelah, malam panjang, dan rasa ragu — semua terbayar hari ini.</p>
-    <p>Kayak Kiki yang terus belajar terbang, kamu juga terus belajar untuk jadi lebih kuat dan percaya diri.</p>
-    <p>Hari ini bukan akhir, tapi langkah besar menuju impianmu. Aku bangga banget sama kamu 🌸</p>
-    <p>Semoga langkahmu makin ringan, hatimu selalu hangat, dan aku akan terus di sini menemani kamu, sampai akhir cerita 💌</p>
-    <p class="footer">– Dari seseorang yang selalu dukung kamu 🌷</p>
-  </div>
-
-  <!-- AUDIO -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="https://raw.githubusercontent.com/Sykesess/ucapan/main/A%20Town%20with%20an%20Ocean%20View.mp3" type="audio/mpeg">
+  <!-- MUSIK -->
+  <audio id="bgMusic" loop>
+    <source src="A Town with an Ocean View.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- SCRIPT -->
+  <!-- JS SCRIPT -->
   <script>
-    const video = document.querySelector('#introVideo video');
-    const startButton = document.getElementById('startButton');
-    const slideshow = document.querySelector('.slideshow');
-    const nextBtn = document.getElementById('nextBtn');
-    const slides = document.querySelectorAll('.slide-item');
-    const finalMessage = document.getElementById('finalMessage');
+    const video = document.getElementById("openingVideo");
+    const nextBtn = document.getElementById("nextBtn");
+    const slideshow = document.querySelector(".slideshow");
+    const slideItems = document.querySelectorAll(".slide-item");
+    const nextSlideBtn = document.getElementById("nextSlideBtn");
+    const finalMessage = document.getElementById("finalMessage");
+    const bgMusic = document.getElementById("bgMusic");
+
     let currentSlide = 0;
 
     video.onended = function () {
-      document.getElementById('introVideo').style.display = 'none';
-      startButton.style.display = 'block';
+      nextBtn.classList.add("show");
     };
 
-    function startSlides() {
-      startButton.style.display = 'none';
-      slideshow.style.display = 'block';
-      nextBtn.style.display = 'block';
-    }
+    nextBtn.onclick = function () {
+      document.querySelector(".video-container").style.display = "none";
+      slideshow.style.display = "block";
+      bgMusic.play();
+    };
 
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
+    nextSlideBtn.onclick = function () {
+      slideItems[currentSlide].classList.remove("active");
       currentSlide++;
-      if (currentSlide < slides.length) {
-        slides[currentSlide].classList.add('active');
+      if (currentSlide < slideItems.length) {
+        slideItems[currentSlide].classList.add("active");
       } else {
-        slideshow.style.display = 'none';
-        nextBtn.style.display = 'none';
-        finalMessage.style.display = 'block';
+        slideshow.style.display = "none";
+        finalMessage.classList.add("show");
       }
-    }
+    };
   </script>
+
 </body>
 </html>
