@@ -1,58 +1,126 @@
+/* Reset dasar */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Charm', cursive;
-  background: url('https://i.postimg.cc/CMrYKm9W/studio-ghibli-iphone-bc4pl33gwurwz2tj.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  background-color: #fffaf3;
+  color: #333;
   text-align: center;
 }
 
-.container {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  max-width: 600px;
-  margin: 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+/* VIDEO PEMBUKA */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-p {
-  font-size: 20px;
-  line-height: 1.6;
-  margin: 10px 0;
-}
-
-.footer {
+#nextBtn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
   font-size: 18px;
-  margin-top: 25px;
-  font-style: italic;
-}
-
-.play-button {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  font-family: 'Charm', cursive;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #f7d9ae;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin: 20px auto;
-  display: block;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+  display: none;
+  font-family: 'Charm', cursive;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.play-button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: scale(1.05);
+#nextBtn.show {
+  display: block;
+  animation: fadeIn 2s;
+}
+
+/* SLIDESHOW */
+.slideshow {
+  position: relative;
+  padding: 30px;
+}
+
+.slide-item {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease;
+}
+
+.slide-item.active {
+  display: flex;
+}
+
+.slide {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.slide-text {
+  font-size: 20px;
+  background-color: #fff8e7;
+  padding: 10px 20px;
+  border-radius: 12px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#nextSlideBtn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #f6c28b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Charm', cursive;
+}
+
+/* FINAL UCAPAN */
+#finalMessage {
+  display: none;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease;
+}
+
+#finalMessage.show {
+  display: block;
+}
+
+#finalMessage h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#finalMessage {
+  display: none;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease;
+  background-image: url('https://raw.githubusercontent.com/Sykesess/ucapan/main/background ucapan1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff; /* Biar teksnya tetap kebaca di atas background */
+}
+
+.footer {
+  margin-top: 30px;
+  font-style: italic;
+  color: #555;
+}
+
+/* ANIMASI FADE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
